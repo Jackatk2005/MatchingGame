@@ -22,6 +22,10 @@ public class DifficultyChecker
         {
             num = 3;
         }
+        else
+        {
+            num = 4;
+        }
         return num;
     }
 }

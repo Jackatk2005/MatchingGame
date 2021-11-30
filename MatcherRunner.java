@@ -16,7 +16,7 @@ public class MatcherRunner
         //While loop in order to quit or send to process method
         while(true)
         {
-            System.out.println("Would You Like to Play My Game or Quit  (Enter: play/quit)");
+            System.out.println("Would You Like to Play My Game or Quit  (Enter: play/quit) juhuh");
             String command = input.nextLine();
             if(command.equalsIgnoreCase("quit"))
             {

@@ -40,7 +40,7 @@ public class MatcherRunner
     public static void CommandProcesser(){
         System.out.println("Hello World");
         Scanner input = new Scanner(System.in);
-        
+        System.out.println("Hello");
 
     }
     }

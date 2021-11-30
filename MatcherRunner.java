@@ -5,20 +5,15 @@ public class MatcherRunner
     public static void main(String[] args)
     {
         //Declare Scanner
-        //{
         Scanner input = new Scanner(System.in);
-        //}
         
         //Startup Messages
-        //{
         System.out.println("Hello User");    
         System.out.println("What shall I Call You");    
         String name = input.nextLine();
         System.out.println("Ok " + name + " It's Nice to Meet You");
-        //}
         
         //While loop in order to quit or send to process method
-        //{
         while(true)
         {
             System.out.println("Would You Like to Play My Game or Quit  (Enter: play/quit)");
@@ -34,13 +29,12 @@ public class MatcherRunner
                 CommandProcesser();
             }
         }    
-        //}
-        }
+    }
     
     public static void CommandProcesser(){
-        System.out.println("Hello World");
+        System.out.println("Attempt to Match These Base 10 Numbers With a Random Base Between 1 and 10");
         Scanner input = new Scanner(System.in);
-        System.out.println("Hello");
+        
 
     }
-    }
+}

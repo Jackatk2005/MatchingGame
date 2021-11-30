@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MatcherRunner {
 
-    private static int d;
+    public static int d;
 
     public static void main(String[] args) {
         //Declare Scanner
@@ -25,6 +25,10 @@ public class MatcherRunner {
             } else if (command.equalsIgnoreCase("play")) {
                 CommandProcessor();
             }
+            else
+            {
+                System.out.println("Invalid Input, Try Again");
+            }
         }
     }
 
@@ -33,7 +37,7 @@ public class MatcherRunner {
         System.out.println("Attempt to Match These Base 10 Numbers With a Random Base Between 1 and 10");
 
         while(true) {
-            System.out.println("Would You Like to Play on:" + "\n" + "Easy" + "\n" + "Medium" + "\n" + "Or Hard");
+            System.out.println("Would You Like to Play on:\nEasy\nMedium\nOr Hard");
             String difficulty = input.nextLine();
             DifficultyChecker DC = new DifficultyChecker(difficulty);
             int i = DC.check();

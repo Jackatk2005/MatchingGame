@@ -1,7 +1,7 @@
 public class DifficultyChecker
 {
-    private String difficulty;
-    private int num;
+    public String difficulty;
+    public int num;
 
     public DifficultyChecker(String d)
     {

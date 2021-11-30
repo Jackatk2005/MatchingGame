@@ -32,9 +32,24 @@ public class MatcherRunner
     }
     
     public static void CommandProcesser(){
-        System.out.println("Attempt to Match These Base 10 Numbers With a Random Base Between 1 and 10");
         Scanner input = new Scanner(System.in);
+        System.out.println("Attempt to Match These Base 10 Numbers With a Random Base Between 1 and 10");
+        System.out.println("Would You Like to Play on:" + "\n" + "Easy" + "\n" + "Medium" + "\n" + "Or Hard");
+        String difficulty = input.nextLine();
         
+        DifficultyChecker DC = new DifficultyChecker(difficulty);
+        int i = DC.check();
 
+        if(i == 1){
+            System.out.println("Easy It Is");
+        }
+        else if(i == 2)
+        {
+            System.out.println("Medium It Is");
+        }
+        else if(i == 3)
+        {
+            System.out.println("Hard It Is");
+        }
     }
 }

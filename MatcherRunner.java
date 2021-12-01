@@ -57,5 +57,6 @@ public class MatcherRunner {
                 System.out.println("Invalid Input Try Again");
             }
         }
+        Difficulty D = new Difficulty(d);
     }
 }

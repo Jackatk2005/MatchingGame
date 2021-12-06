@@ -27,10 +27,10 @@ public class Randomizer {
             }
 
             Arrays.sort(arr);
-            String[] base2 = new String[4];
+            Integer[] base2 = new Integer[4];
             for (int j = 0; j < 4; j++) {
                 Base2 = Integer.toString(arr[j], 2);
-                base2[j] = Base2;
+                base2[j] = Integer.valueOf(Base2);
             }
             shuffleArray(base2);
             for (int p = 0; p < 4; p++) {
@@ -54,10 +54,10 @@ public class Randomizer {
             }
 
             Arrays.sort(arr);
-            String[] base2 = new String[6];
+            Integer[] base2 = new Integer[6];
             for (int j = 0; j < 6; j++) {
                 Base2 = Integer.toString(arr[j], 2);
-                base2[j] = Base2;
+                base2[j] = Integer.valueOf(Base2);
             }
             shuffleArray(base2);
             for (int p = 0; p < 6; p++) {
@@ -68,27 +68,26 @@ public class Randomizer {
     }
     else if(difficulty ==3)
     {
-        TreeSet<String> temp = new TreeSet<>();
+        TreeSet<Integer> temp = new TreeSet<>();
         while (temp.size() < 10) {
             for (int i = 0; i < 1; i++) {
                 Rand = ThreadLocalRandom.current().nextInt(401, 600);
-                String s = Integer.toString(Rand);
-                temp.add(s);
+                temp.add(Rand);
             }
         }
-        String arr[] = new String[10];
+        Integer[] arr = new Integer[10];
 
         int i = 0;
 
-        for (String ele : temp) {
+        for (int ele : temp) {
             arr[i++] = ele;
         }
 
         Arrays.sort(arr);
-        String[] base2 = new String[10];
+        Integer[] base2 = new Integer[10];
         for (int j = 0; j < 10; j++) {
-            Base2 = Integer.toString(Integer.parseInt(arr[j]), 2);
-            base2[j] = Base2;
+            Base2 = Integer.toString(Integer.parseInt(String.valueOf(arr[j])), 2);
+            base2[j] = Integer.valueOf(Base2);
         }
         shuffleArray(base2);
         for (int p = 0; p < 10; p++) {
@@ -102,45 +101,45 @@ public class Randomizer {
         int inans1 = Integer.parseInt(answer);
         int inans2 = Integer.parseInt(answer2);
 
-        int ans1 = Integer.parseInt(arr[inans1]);
+        int ans1 = Integer.parseInt(String.valueOf(arr[inans1]));
 
-        String a = base2[inans2];
+        String a = String.valueOf(base2[inans2]);
         int ans2 = Integer.parseInt(a,2);
 
-        List<String> list1 = Arrays.asList(arr);
-        List<String> list2 = Arrays.asList(base2);
-
-        while(!list1.isEmpty())
+        List<Integer> list1 = Arrays.asList(arr);
+        List<Integer> list2 = Arrays.asList(base2);
+        int count = 15;
+        while(true)
         {
-
-            if(ans1 == ans2)
+            count--;
+            if(count == 0){
+                break;
+            }
+            else if(ans1 == ans2)
             {
                 System.out.println("Way To Go");
                 list1.remove(inans1);
-                list1.remove(inans2);
-                for (int p = 0; p < 10; p++) {
+                list2.remove(inans2);
+                for (int p = 0; p < list1.size(); p++) {
                     System.out.println(p+": "+arr[p] + " ———— " + p+": "+base2[p]);
                 }
             }
-        else
-        {
-            System.out.println("Oops That's Wrong");
+            else
+            {
+                System.out.println("Oops That's Wrong, Try Again");
+            }
+
         }
     }
-
-
-    }
-
-
 }
 
-    static void shuffleArray(String[] ar) {
+    static void shuffleArray(Integer[] ar) {
         Random rnd = ThreadLocalRandom.current();
         for (int i = ar.length - 1; i > 0; i--) {
             int index = rnd.nextInt(i + 1);
-            String a = ar[index];
+            String a = String.valueOf(ar[index]);
             ar[index] = ar[i];
-            ar[i] = a;
+            ar[i] = Integer.valueOf(a);
         }
     }
 

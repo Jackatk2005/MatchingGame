@@ -1,10 +1,7 @@
-public class EasyGame
+public class MediumGame
 {
-    public EasyGame()
+    public MediumGame()
     {
         Randomizer Rand = new Randomizer();
-
     }
-
-
 }

@@ -31,14 +31,24 @@ public class Difficulty {
     {
         Scanner Easy = new Scanner(System.in);
         System.out.println("Playing on Easy Consists of 4 Numbers to Match");
-        System.out.println("Are You Ready? (y)");
-        String answer = Easy.nextLine();
-
-        if(answer.equalsIgnoreCase("y"))
+        while(true)
         {
-            EasyGame EG = new EasyGame();
+            System.out.println("Are You Ready? (y,n)");
+            String answer = Easy.nextLine();
+            if(answer.equalsIgnoreCase("y"))
+            {
+                EasyGame EG = new EasyGame();
+                break;
+            }
+            else if(answer.equalsIgnoreCase("n"))
+            {
+                break;
+            }
+            else
+            {
+                System.out.println("Invalid Input Try Again");
+            }
         }
-
     }
     public void Medium()
     {

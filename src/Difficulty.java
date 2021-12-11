@@ -1,3 +1,7 @@
+import src.EasyGame;
+import src.HardGame;
+import src.MediumGame;
+
 import java.util.Scanner;
 
 public class Difficulty {

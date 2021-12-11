@@ -1,3 +1,5 @@
+package src;
+
 import java.lang.reflect.Array;
 import java.sql.SQLOutput;
 import java.util.*;
@@ -8,12 +10,13 @@ import static java.lang.System.out;
 public class EasyGame
 {
     public static String base2 = "";
+    private static final int SIZE = 4;
     public EasyGame()
     {
         // New Integer[] of 10 values
         TreeSet<Integer> temp = new TreeSet<>();
         // Loop 10 Times Incrementing
-        while(temp.size() < 10) {
+        while(temp.size() < SIZE) {
             // Rnd = Random num between 1-100
             int rnd = ThreadLocalRandom.current().nextInt(1, 100);
             // Assign temp[index j] == rnd
@@ -38,7 +41,7 @@ public class EasyGame
         {
             Base10Arr.add(Integer.toString(j));
         }
-
+        Collections.shuffle(Base2Arr);
         // For loop that prints out the
         while (Base2Arr.size() != 0)
         {

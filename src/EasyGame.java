@@ -11,6 +11,7 @@ public class EasyGame
 {
     public static String base2 = "";
     private static final int SIZE = 4;
+    public int count = 0;
     public EasyGame()
     {
         // New Integer[] of 10 values
@@ -50,36 +51,41 @@ public class EasyGame
                 out.println(t + 1 + ": " + Base10Arr.get(t) + " __________ " + Base2Arr.get(t));
             }
             Scanner sc = new Scanner(System.in);
-            out.println("Input The base10 Num then the Base2 Num: (Ex: 1 2)");
 
-            String base10 = sc.next();
-            String base2 = sc.next();
-            if(Integer.parseInt(base10) > Base10Arr.size() || Integer.parseInt(base2) > Base2Arr.size())
-            {
-                out.println("Invalid Try Again");
-            }
-            else
-            {
-                int intBase2 = Integer.parseInt(base2.trim());
-                int intBase10 = Integer.parseInt(base10.trim());
 
-                String h = String.valueOf(Integer.parseInt(Base2Arr.get(intBase2-1), 2));
+                out.println("Input The base10 Num then the Base2 Num: (Ex: 1 2)");
 
-                if(Objects.equals(h, Base10Arr.get(intBase10-1)))
+                String base10 = sc.next();
+                String base2 = sc.next();
+                if(Integer.parseInt(base10) > Base10Arr.size() || Integer.parseInt(base2) > Base2Arr.size())
                 {
-                    out.println("You Did it");
-                    Base2Arr.remove(intBase2-1);
-                    Base10Arr.remove(intBase10-1);
+                    out.println("Invalid Try Again");
                 }
                 else
                 {
-                    out.println("Oops");
-                }
+                    int intBase2 = Integer.parseInt(base2.trim());
+                    int intBase10 = Integer.parseInt(base10.trim());
+
+
+
+                    String h = String.valueOf(Integer.parseInt(Base2Arr.get(intBase2-1), 2));
+
+                    if(Objects.equals(h, Base10Arr.get(intBase10-1)))
+                    {
+                        out.println("You Did it");
+                        count++;
+                        Base2Arr.remove(intBase2-1);
+                        Base10Arr.remove(intBase10-1);
+                    }
+                    else
+                    {
+                        count++;
+                        out.println("Oops, Try Again");
+                    }
             }
 
-
         }
-
+        out.println("You Finished in " + count + " Guesses");
 
 
 

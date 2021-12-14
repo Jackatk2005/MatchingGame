@@ -11,7 +11,7 @@ public class EasyGame
 {
     public static String base2 = "";
     private static final int SIZE = 4;
-    public int count = 0;
+    public static Map<String, Integer> count = new HashMap<>();
     public EasyGame()
     {
         // New Integer[] of 10 values
@@ -44,6 +44,7 @@ public class EasyGame
         }
         Collections.shuffle(Base2Arr);
         // For loop that prints out the
+        count.put("1",0);
         while (Base2Arr.size() != 0)
         {
             for(int t = 0; t < Base2Arr.size(); t++)
@@ -55,8 +56,18 @@ public class EasyGame
 
                 out.println("Input The base10 Num then the Base2 Num: (Ex: 1 2)");
 
-                String base10 = sc.next();
-                String base2 = sc.next();
+                String Base10 = sc.next();
+                String Basee2 = sc.next();
+                Queue<String> qs = new LinkedList<>();
+
+                qs.add(Base10);
+                qs.add(Basee2);
+                Iterator<String> In = qs.iterator();
+
+                String base10 = In.next();
+                base2 = In.next();
+                out.println(base10);
+
                 if(Integer.parseInt(base10) > Base10Arr.size() || Integer.parseInt(base2) > Base2Arr.size())
                 {
                     out.println("Invalid Try Again");
@@ -73,19 +84,19 @@ public class EasyGame
                     if(Objects.equals(h, Base10Arr.get(intBase10-1)))
                     {
                         out.println("You Did it");
-                        count++;
+                        count.put("1",count.get("1")+ 1);
                         Base2Arr.remove(intBase2-1);
                         Base10Arr.remove(intBase10-1);
                     }
                     else
                     {
-                        count++;
+                        count.put("1",count.get("1")+ 1);
                         out.println("Oops, Try Again");
                     }
             }
 
         }
-        out.println("You Finished in " + count + " Guesses");
+        out.println("You Finished in " + count.get("1") + " Guesses");
 
 
 

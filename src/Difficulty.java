@@ -58,24 +58,32 @@ public class Difficulty {
     {
         Scanner Medium = new Scanner(System.in);
         System.out.println("Playing on Medium Consists of 6 Numbers to Match");
-        System.out.println("Are You Ready? (y)");
+        System.out.println("Are You Ready? (y, n)");
         String answer = Medium.nextLine();
-
-        if(answer.equalsIgnoreCase("y"))
-        {
-            MediumGame MG = new MediumGame();
+        while(true) {
+            if (answer.equalsIgnoreCase("y")) {
+                MediumGame MG = new MediumGame();
+            } else if (answer.equalsIgnoreCase("n")) {
+                break;
+            } else {
+                System.out.println("Invalid Input Try Again");
+            }
         }
     }
     public void Hard()
     {
         Scanner Hard = new Scanner(System.in);
         System.out.println("Playing on Hard Consists of 8 Numbers to Match");
-        System.out.println("Are You Ready? (y)");
+        System.out.println("Are You Ready? (y, n)");
         String answer = Hard.nextLine();
-
-        if(answer.equalsIgnoreCase("y"))
-        {
+    while(true) {
+        if (answer.equalsIgnoreCase("y")) {
             HardGame EG = new HardGame();
+        } else if (answer.equalsIgnoreCase("n")) {
+            break;
+        } else {
+            System.out.println("Invalid Input Try Again");
         }
+    }
     }
 }
